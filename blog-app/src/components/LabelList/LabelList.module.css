@@ -1,0 +1,14 @@
+.labels{
+  display: flex;
+  margin: 10px 0 5px 30px;
+}
+
+
+.my-label{
+  opacity: 0.6;
+  width: 120px;
+  text-align: center;
+  padding: 8px 0px !important;
+  border-radius: 10px !important;
+  /* height: 35px; */
+}

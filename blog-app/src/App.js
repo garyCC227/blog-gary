@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   innerBox: {
     display: 'flex',
     flexDirection: 'column',
-    width:'1200px',
+    width:'1100px',
     margin:'30px auto',
     padding:'10px',
     backgroundColor:'#fafafa',
@@ -62,8 +62,8 @@ function App() {
             <Head />
             <Switch>
               <Route exact path='/' component={Home} />
-              <Route path='/404' component={NotFound} />
               <Route path='/post/:id' render={(props) => <Post {...props} />} />
+              <Route path='*' component={NotFound} />
             </Switch>
           </main>
         </Router>

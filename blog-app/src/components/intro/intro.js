@@ -42,9 +42,9 @@ const Intro = ({name, occupation, desc, links}) => {
         />
       </div>
       <div className={styles.introduction}>
-        <h2 className={`ui header`}>
+        <h2 className={`header`}>
           Hi, I'am <span className={styles.highlight}>{name}</span>.
-          <div className={`sub header ${styles.occupation}`}>
+          <div className={`header ${styles.occupation}`}>
             {occupation}
           </div>
           <p className='content'>
@@ -71,10 +71,10 @@ const Intro = ({name, occupation, desc, links}) => {
                 }}>About Me</Button>
               </a>
             <span style={{marginLeft:'20px'}}>
-              <a href={links.github}>
+              <a href={links.github} target="_blank">
                 <FaGithub />
               </a>
-              <a href={links.linkedin}>
+              <a href={links.linkedin} target="_blank">
                 <FaLinkedin />
               </a>
             </span>
@@ -96,13 +96,13 @@ Intro.propTypes = {
 };
 
 Intro.defaultProps = {
-  name: "Linchen Chen(Gary)",
+  name: "Linchen Chen",
   occupation: "Software Engineering Student at UNSW Sydney",
   desc:"Specialized in React, Python, Machine Learning, C++.",
   links:{
     contactMe:'#',
     aboutMe:"/about",
     github:"https://github.com/garyCC227",
-    linkedin:"linkedin.com/in/linchen-gary-chen-a119a4190",
+    linkedin:"https://linkedin.com/in/linchen-gary-chen-a119a4190",
   },
 };
