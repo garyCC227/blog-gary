@@ -4,6 +4,7 @@
 #gary's
 /src/develop/*
 /src/stories/*
+/.storybook
 
 # dependencies
 /node_modules
