@@ -10,16 +10,3 @@
   width:950px;
   margin-left:20px !important;
 }
-
-.cards{
-  display: flex;
-  width: 1000px;
-  flex-wrap:wrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 10px;
-}
-
-.cards > * {
-  margin: 10px 10px !important;
-}

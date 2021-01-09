@@ -5,6 +5,7 @@ import Intro from "../components/intro/intro";
 import Postlist from "../components/postlist/postlist";
 import Card from "../components/Card";
 import LabelList from "../components/LabelList";
+import CardList from "../components/CardList";
 
 const Home = () => {
   return (
@@ -13,14 +14,7 @@ const Home = () => {
       <div class="post-list">
         <h2 class="ui dividing header">RECENT POSTS</h2>
         <LabelList />
-        <div className="cards">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-          <Card />
-        </div>
+        <CardList />
       </div>
       {/* <div>
         <Postlist />
