@@ -1,0 +1,40 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather");
+
+.notfound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
+}
+.title {
+  color: #5f88e0;
+  font-size: 130px;
+  margin-top: 40px;
+  font-family: "Merriweather", serif;
+}
+.notfound p {
+  font-size: 22px;
+  color: #000;
+}
+.button {
+  padding: 10px 30px;
+  margin-bottom: 9rem;
+  border: 0px;
+  background: #5f88e0;
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.3s all;
+  font-family: "Merriweather", serif;
+}
+.button:hover {
+  background: #4366b1;
+  color: #fff;
+}
+.button:active {
+  transform: translate(-5px, 5px);
+}
