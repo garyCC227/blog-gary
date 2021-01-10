@@ -61,7 +61,7 @@ function App() {
           <main className={classes.content}>
             <Head />
             <Switch>
-              <Route exact path='/' component={Home} />
+              <Route exact path='/blog-gary' component={Home} />
               <Route path='/post/:id' render={(props) => <Post {...props} />} />
               <Route path='*' component={NotFound} />
             </Switch>
