@@ -1,0 +1,26 @@
+[
+    {
+        "id": "1",
+        "className": "ui pink label",
+        "label": "API"
+    },
+    {
+        "id": "2",
+        "className": "ui blue label",
+        "label": "Git"
+
+    },
+    {
+        "id": "3",
+        "className": "ui teal label",
+        "label": "JavaScript"
+
+    },
+    {
+        "id": "4",
+        "className": "ui red label",
+        "label": "clean code"
+
+    }
+
+]

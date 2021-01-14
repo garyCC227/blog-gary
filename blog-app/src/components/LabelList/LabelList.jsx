@@ -2,6 +2,8 @@ import React from 'react';
 
 import styles from './LabelList.module.css';
 
+import tabData from './tab.json'
+
 const LabelList = () =>{
 
   return (
@@ -9,26 +11,25 @@ const LabelList = () =>{
     <div className={styles.labels}>
       {/* <h4 className="ui header">Tags:</h4> */}
       
-      <div className={`ui pink label ${styles['my-label']}`}>
-        <div class="ui checkbox">
-          <input type="checkbox" name="example"/>
-          <label style={{color:'white'}}>Pink</label>
-        </div>
-      </div>
+      <div>
+        <h1> Hello here </h1>
+        {
+        tabData.map( (tabDetail, index) =>{
+          return(
+            <div className={`${tabDetail.className} ${styles['my-label']}` }>
+              <div class="ui checkbox">
+                <input type="checkbox" name="example"/>
+                <label style={{color:'white'}}>{tabDetail.label}</label>
+              </div>
+            </div>
+          )
 
-      <div className={`ui blue label ${styles['my-label']}`}>
-        <div class="ui checkbox">
-          <input type="checkbox" name="example"/>
-          <label style={{color:'white'}}>Blue</label>
-        </div>
+        }
+        )
+        }
       </div>
-
-      <div className={`ui teal label ${styles['my-label']}`}>
-        <div class="ui checkbox">
-          <input type="checkbox" name="example"/>
-          <label style={{color:'white'}}>Teal</label>
-        </div>
-      </div>
+      
+      
 
       {/* <a class={`ui teal label `}>Orange</a>
       <a class={`ui blue label `}>Yellow</a> */}

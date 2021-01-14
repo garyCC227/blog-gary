@@ -37,9 +37,9 @@ import styles from './CardList.module.css';
 
 const CardList = ({}) => {
   //hooks
-  const [posts, setPosts] = useState([1,1,1,1]);
+  const [posts, setPosts] = useState([1]);
 
-  const a = [1,1,1,1]
+  const a = [1,1]
   // rendering
   // [1,1,1,1] + [1,1,1,1]
   // [1,1,1,1]
@@ -61,6 +61,7 @@ const CardList = ({}) => {
   
   return (
     <div>
+       
        <InfiniteScroll
           dataLength={posts.length}
           next={loadMorePosts}
@@ -74,6 +75,7 @@ const CardList = ({}) => {
             })
           }
         </InfiniteScroll>
+        
     </div>
   )
 }
