@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import Markdown from "react-markdown";
 
 import "./post.css";
-import post from "../blogPost.json";
+import post from "../cardNote.json";
 
 const Post = (props) => {
   const validId = parseInt(props.match.params.id);
@@ -14,7 +14,7 @@ const Post = (props) => {
 
   const fetchPost = {};
   let postExists = false;
-  post.forEach((post, i) => {
+  post['blogs'].forEach((post, i) => {
     if (validId === post.id) {
       fetchPost.title = post.title ? post.title : "No title given";
       fetchPost.date = post.date ? post.date : "No date given";
@@ -39,7 +39,7 @@ const Post = (props) => {
             <div className="post-head">
               <h2>{fetchPost.title}</h2>
               <p>
-                {fetchPost.date} by <span>{fetchPost.author}</span>
+                {fetchPost.date} by <span>Linchen Chen</span>
               </p>
             </div>
 

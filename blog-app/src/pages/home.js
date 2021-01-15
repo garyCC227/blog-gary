@@ -2,23 +2,23 @@ import React from "react";
 
 import "./home.css";
 import Intro from "../components/intro/intro";
-import Postlist from "../components/postlist/postlist";
-import Card from "../components/Card";
 import LabelList from "../components/LabelList";
 import CardList from "../components/CardList";
+import cardData from "../cardNote.json";
+import FilterProvider from '../utils/store';
 
 const Home = () => {
+  //TODO: late host the databse in CLOUB with API?
   return (
     <div>
       <Intro />
       <div class="post-list">
         <h2 class="ui dividing header">RECENT POSTS</h2>
-        <LabelList />
-        <CardList />
+        <FilterProvider>
+          <LabelList tagsMeta={cardData.tags}/>
+          <CardList blogs={cardData.blogs} tagsMeta={cardData.tags}/>
+        </FilterProvider>
       </div>
-      {/* <div>
-        <Postlist />
-      </div> */}
     </div>
   );
 };
