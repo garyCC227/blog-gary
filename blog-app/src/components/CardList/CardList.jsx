@@ -59,7 +59,7 @@ const CardList = ({blogs, tagsMeta}) => {
 
   const LoadMoreButton  = (
     <button className={`ui pink inverted button ${styles['load-more']}`}>
-      Loading...
+      Scroll to load...
     </button>
   )
   
