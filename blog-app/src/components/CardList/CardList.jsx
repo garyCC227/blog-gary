@@ -22,9 +22,6 @@ import styles from './CardList.module.css';
    'ID2'
  }
 
- 1. create fake json.file + .md
- 2. filter tags
- 3. finalise loadmore
  4. about me page template
    1. about me 
    2. experience
