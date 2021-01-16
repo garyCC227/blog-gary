@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
 import PropTypes from "prop-types";
 
 import styles from "./intro.module.css";
@@ -72,10 +73,14 @@ const Intro = ({name, occupation, desc, links}) => {
               </a>
             <span style={{marginLeft:'20px'}}>
               <a href={links.github} target="_blank">
-                <FaGithub />
+                <IconButton>
+                  <FaGithub />
+                </IconButton>
               </a>
               <a href={links.linkedin} target="_blank">
+              <IconButton>
                 <FaLinkedin />
+                </IconButton>
               </a>
             </span>
           </div>
