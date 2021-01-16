@@ -16,8 +16,6 @@ const CardList = ({blogs, tagsMeta}) => {
   const [loadOnce, setLoadOnce] = useState(false);
   const [hasMore, setHasMore] = useState(true);
 
-  console.log(filteredBlogs);
-
   //only run this when the application first load
   useEffect(()=>{
     if (!loadOnce){
@@ -28,6 +26,7 @@ const CardList = ({blogs, tagsMeta}) => {
   }, [loadOnce])
 
   useEffect(()=>{
+    setPosts(filteredBlogs.slice(0, 4));
     setEnd(4);
     if (filteredBlogs.length > 4){
       setHasMore(true);
@@ -37,6 +36,7 @@ const CardList = ({blogs, tagsMeta}) => {
   }, [filteredBlogs])
 
   useEffect(()=>{
+    console.log("here2");
     setPosts(filteredBlogs.slice(0, end));
   }, [end])
 
@@ -59,7 +59,7 @@ const CardList = ({blogs, tagsMeta}) => {
 
   const LoadMoreButton  = (
     <button className={`ui pink inverted button ${styles['load-more']}`}>
-      Scroll to load...
+      Scroll to load
     </button>
   )
   

@@ -1,10 +1,3 @@
-.content{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
 .my-section{
   border-bottom: 1px solid #E8E8E8;
   width: 90%;

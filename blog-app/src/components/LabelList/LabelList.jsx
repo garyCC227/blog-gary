@@ -96,5 +96,5 @@ const sortByDateString = (date1, date2) => {
   const time1 = new Date(date1);
   const time2 = new Date(date2);
 
-  return date1 > date2;
+  return time1 > time2;
 }
