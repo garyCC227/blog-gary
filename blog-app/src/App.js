@@ -11,6 +11,7 @@ import Post from "./pages/post";
 import NotFound from "./pages/notFound";
 // import Navbar from "./components/navbar/navbar";
 import Header from "./components/Header";
+import About from "./pages/about";
 
 const drawerWidth = 240;
 
@@ -63,6 +64,7 @@ function App() {
             <Switch>
               <Route exact path='/blog-gary' component={Home} />
               <Route path='/post/:id' render={(props) => <Post {...props} />} />
+              <Route path='/about' component={About} />
               <Route path='*' component={NotFound} />
             </Switch>
           </main>

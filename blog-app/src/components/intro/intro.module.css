@@ -41,12 +41,11 @@
   font-weight: 500;
   color: #868686;
 }
-a {
-  text-decoration: none;
-  font-size: 25px;
-  margin-right: 10px;
-  color: #5f88e0;
+
+.my-button{
+  margin: 0 10px;
 }
+
 @media (max-width: 655px) {
   .intro {
     flex-direction: column;

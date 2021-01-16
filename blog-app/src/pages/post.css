@@ -39,13 +39,13 @@ p {
   font-weight: 400;
   font-family: "Open Sans", sans-serif;
 }
-pre {
+/* pre {
   background-color: rgb(9, 9, 44);
   color: #fff;
   padding: 20px;
   border-radius: 4px;
   font-size: 16px;
-}
+} */
 blockquote {
   border-left-width: 8px;
   margin-left: -2rem;

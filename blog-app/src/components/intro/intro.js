@@ -50,7 +50,7 @@ const Intro = ({name, occupation, desc, links}) => {
           <p className='content'>
             {desc}
           </p>
-          <div className='social-link'>
+          <div className='social-link' className={styles['my-button']}>
             <a href={links.contactMe}>
               <Button
                 variant='contained'
@@ -63,7 +63,7 @@ const Intro = ({name, occupation, desc, links}) => {
               </Button>
               
             </a>
-            <a href={links.aboutMe}>
+            <a href={links.aboutMe} className={styles['my-button']}>
                 <Button variant='outlined'  
                 classes={{
                   root: classes.aboutMe,

@@ -1,12 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Markdown from "react-markdown";
 
 import "./post.css";
 import post from "../cardNote.json";
+import file from "../content/Spring_RESTful.md";
+
 
 const Post = (props) => {
+  const [temp, setTemp] = useState('');
+
+  useEffect(()=>{
+    fetch(file)
+    .then(res=> res.text())
+    .then(text=>{
+      setTemp(text)
+    })
+  }, [])
+
   const validId = parseInt(props.match.params.id);
   if (!validId) {
     return <Redirect to="/404" />;
@@ -43,7 +55,7 @@ const Post = (props) => {
               </p>
             </div>
 
-            <Markdown source={fetchPost.content} escapeHtml={false} />
+            <Markdown  children={temp} escapeHtml={false} />
           </div>
         </div>
       </div>
