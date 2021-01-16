@@ -7,7 +7,7 @@
    2. experience
    4. contact page
  5.recent work
- 6. dark/light mode
+ 6. dark/light mode ()
 7....
-8....
+
 
