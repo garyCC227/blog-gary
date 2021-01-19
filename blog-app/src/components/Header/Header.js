@@ -68,7 +68,7 @@ Header.defaultProps = {
   navs: [
     { desc: "Home", to: "/blog-gary" },
     { desc: "About", to: "/about" },
-    { desc: "Contact", to: "/contact"},
+    { desc: "Work", to: "/works"},
     { desc: "TBD", to: "/404" },
   ],
 };
