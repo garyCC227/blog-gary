@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Rubik:wght@400;500&display=swap');
+
+
+.work-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 900px;
+  padding: 20px;
+}
+
+.work-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top:10px;
+}
+
+.work-list > * {
+  margin: 10px 10px !important;
+}
+
+.link{
+  font-size: 12pt;
+  font-family:"Rubik",sans-serif;
+  font-weight: 500 !important;
+  opacity: 0.7;
+}

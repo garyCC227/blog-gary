@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Rubik:wght@400;500&display=swap');
+
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white !important;
+}
+
+.content > * {
+    font-family: "Rubik",sans-serif !important;
+}
+
+.content > h3 {
+    // color: white !important;
+    font-size: 20px !important;
+    letter-spacing: 1px;
+}
+
+.content > p{
+    text-align: center;
+    font-size: 11pt;
+    line-height: 25px;
+    color: black;
+}
+
+
+
+.item{
+  width: 250px !important;
+  height: 300px;
+  padding: 40px 5px!important;
+  border-radius: 20px !important;
+  font-family: "Open Sans", sans-serif !important;
+  // background: rgb(108, 108, 229) !important;
+  align-items: center;
+  transition:  transform 0.5s;
+
+  &:hover {
+    transform: translate(0px, -10px);
+    // border-color: $highlight;
+    // box-shadow: 20px 20px 100px rgba(0, 0, 0, 0.5);
+     opacity: 1;
+    .card--display {
+      display: none;
+    }
+    
+    .card--hover {
+      display: block;
+    }
+  }
+
+}
+.tags{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 250px;
+  justify-content: center;
+}
+
+.tags > *{
+    margin: 3px 3px !important;
+}
+
+.tag{
+  min-width:75px;
+  text-align: center;
+}
