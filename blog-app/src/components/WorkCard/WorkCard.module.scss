@@ -1,58 +1,80 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Rubik:wght@400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&family=Rubik:wght@400;500&display=swap");
 
-
-.content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white !important;
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white !important;
 }
 
 .content > * {
-    font-family: "Rubik",sans-serif !important;
+  font-family: "Rubik", sans-serif !important;
 }
 
 .content > h3 {
-    // color: white !important;
-    font-size: 20px !important;
-    letter-spacing: 1px;
+  // color: white !important;
+  font-size: 20px !important;
+  letter-spacing: 1px;
 }
 
-.content > p{
-    text-align: center;
-    font-size: 11pt;
-    line-height: 25px;
-    color: black;
+.content > p {
+  display: none;
+  text-align: center;
+  font-size: 11pt;
+  line-height: 25px;
+  color: black;
 }
 
+.content > a {
+  display: none;
+}
 
+.body {
+  background-color: white !important;
+}
 
-.item{
+.item {
   width: 250px !important;
   height: 300px;
-  padding: 40px 5px!important;
+}
+
+.workBody {
+  width: 250px !important;
+  height: 300px;
+  padding: 40px 5px !important;
   border-radius: 20px !important;
   font-family: "Open Sans", sans-serif !important;
   // background: rgb(108, 108, 229) !important;
   align-items: center;
-  transition:  transform 0.5s;
+  transition: transform 0.5s;
 
   &:hover {
     transform: translate(0px, -10px);
     // border-color: $highlight;
     // box-shadow: 20px 20px 100px rgba(0, 0, 0, 0.5);
-     opacity: 1;
-    .card--display {
-      display: none;
+    opacity: 1;
+    //.card--display {
+    .content > h3 {
+      display: none !important;
     }
-    
-    .card--hover {
+    .content > div {
+      display: none !important;
+    }
+    .content > a {
       display: block;
     }
-  }
 
+    .content > p {
+      display: block;
+      color: white;
+    }
+
+    .content {
+      background-color: black !important;
+    }
+  }
 }
-.tags{
+.tags {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -60,11 +82,11 @@
   justify-content: center;
 }
 
-.tags > *{
-    margin: 3px 3px !important;
+.tags > * {
+  margin: 3px 3px !important;
 }
 
-.tag{
-  min-width:75px;
+.tag {
+  min-width: 75px;
   text-align: center;
 }

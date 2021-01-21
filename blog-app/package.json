@@ -1,6 +1,5 @@
 {
-  // "homepage": "http://garyCC227.github.io/blog-gary",
-  "homepage": "http://oujianjiu.github.io/blog",
+  "homepage": "http://oujianjiu.github.io/blog-gary",
   "name": "blog",
   "version": "0.1.0",
   "private": true,

@@ -13,6 +13,7 @@ import NotFound from "./pages/notFound";
 import Header from "./components/Header";
 import About from "./pages/about";
 import Work from "./pages/works";
+// "homepage": "http://garyCC227.github.io/blog-gary",
 
 const drawerWidth = 240;
 
