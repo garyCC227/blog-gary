@@ -23,7 +23,7 @@ const Works = ({}) => {
   };
 
   const loadMoreButton = (
-    <button className={`ui inverted secondary button ${styles.loadMore}`}>
+    <button className={`ui disabled inverted secondary button ${styles.loadMore}`}>
       Scroll to load..
     </button>
   );

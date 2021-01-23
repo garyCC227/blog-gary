@@ -1,22 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, {useEffect} from "react";
 import { Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Markdown from "react-markdown";
+import hljs from "highlight.js";
 
 import "./post.css";
 import post from "../cardNote.json";
-import file from "../content/Spring_RESTful.md";
 
 
 const Post = (props) => {
-  const [temp, setTemp] = useState('');
-
-  useEffect(()=>{
-    fetch(file)
-    .then(res=> res.text())
-    .then(text=>{
-      setTemp(text)
-    })
+  
+  useEffect(() => {
+    console.log("here");
+    document.querySelectorAll("pre code").forEach(block => {
+      hljs.highlightBlock(block);
+    });
   }, [])
 
   const validId = parseInt(props.match.params.id);
@@ -55,7 +53,7 @@ const Post = (props) => {
               </p>
             </div>
 
-            <Markdown  children={temp} escapeHtml={false} />
+            <Markdown className="post-markdown" children={fetchPost.content} escapeHtml={false} />
           </div>
         </div>
       </div>

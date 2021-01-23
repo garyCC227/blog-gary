@@ -12,9 +12,9 @@ const Home = () => {
   return (
     <div>
       <Intro />
-      <div class="post-list">
-        <h2 class="ui dividing header">RECENT POSTS</h2>
-        <FilterProvider>
+      <div className="post-list">
+        <h2 className="ui dividing header">RECENT POSTS</h2>
+        <FilterProvider>  
           <LabelList tagsMeta={cardData.tags}/>
           <CardList blogs={cardData.blogs} tagsMeta={cardData.tags}/>
         </FilterProvider>

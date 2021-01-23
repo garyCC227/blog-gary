@@ -11,18 +11,18 @@ import json
 
 ##configure the blog meta-data
 # read the md content into oneline string
-file = r"../content/Spring_RESTful.md" #TODO: 1. Modify file name
+file = r"../content/py_collections.md" #TODO: 1. Modify file name
 with open(file,'r', encoding='utf-8') as f:
     output = f.read()
     content = rf'{output}'
 
 #Blog meta data. TODO: 2. modify this everytime
 new_blog = {
-  "id":1, #int
-  "title":"RESTful API with Spring framework", #string
+  "id":3, #int
+  "title":"Python Collection Module", #string
   "author":"Linchen Chen", #string
-  "date":"Jan 16 2021", #string
-  "tag":["API"],  #array
+  "date":"Jan 24 2021", #string
+  "tag":["clean code"],  #array
   "content":content #string
 }
 

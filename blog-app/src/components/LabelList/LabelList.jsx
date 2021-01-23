@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect } from "react";
 
 import styles from "./LabelList.module.css";
 import data from "../../cardNote.json";
@@ -44,7 +44,7 @@ const LabelList = ({ tagsMeta }) => {
 
     //sort blog by date
     newFilteredBlog.sort(sortByDateString);
-
+    console.log(newFilteredBlog);
     setBlogCount(newFilteredBlog.length);
     setFilteredBlogs(newFilteredBlog);
 
@@ -62,8 +62,8 @@ const LabelList = ({ tagsMeta }) => {
           key={value.id}
           className={`${value.className} ${styles["my-label"]}`}
         >
-          <div class='ui checkbox'>
-            <input type='checkbox' name='example' onClick={(evt)=>click(evt, tag)} checked={isChecked}/>
+          <div className='ui checkbox'>
+            <input type='checkbox' name='example' onClick={(evt)=>click(evt, tag)} defaultChecked={isChecked}/>
             <label style={{ color: "white" }}>{tag}</label>
           </div>
         </div>
@@ -81,8 +81,8 @@ const LabelList = ({ tagsMeta }) => {
 
         <div>{tagsUI()}</div>
 
-        {/* <a class={`ui teal label `}>Orange</a>
-      <a class={`ui blue label `}>Yellow</a> */}
+        {/* <a className={`ui teal label `}>Orange</a>
+      <a className={`ui blue label `}>Yellow</a> */}
       </div>
       <p className={styles["left-indent"]}> {`About ${blogCount} results`}</p>
     </>
@@ -92,9 +92,9 @@ const LabelList = ({ tagsMeta }) => {
 export default LabelList;
 
 
-const sortByDateString = (date1, date2) => {
-  const time1 = new Date(date1);
-  const time2 = new Date(date2);
+const sortByDateString = (blog1, blog2) => {
+  const time1 = new Date(blog1.date);
+  const time2 = new Date(blog2.date);
 
-  return time1 > time2;
+  return time2 - time1;
 }

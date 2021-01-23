@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import hljs from "highlight.js";
 
 import "./App.css";
 
@@ -54,6 +55,7 @@ const useStyles = makeStyles((theme) => ({
 
 function App() {
   const classes = useStyles();
+
 
   return (
     <div className={classes.root}>

@@ -34,7 +34,7 @@ export const Header = ({ name, navs }) => {
           <>
             {navs.map(({ desc, to }) => {
               return (
-                <Link to={to}>
+                <Link key={desc} to={to}>
                   <Button size="large"
                     classes={{
                       root: classes.contactMe,
@@ -60,7 +60,7 @@ export default Header;
 
 Header.propTypes = {
   name: PropTypes.string,
-  navs: PropTypes.shape({}),
+  navs: PropTypes.array,
 };
 
 Header.defaultProps = {

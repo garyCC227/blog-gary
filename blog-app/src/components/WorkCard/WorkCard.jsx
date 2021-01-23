@@ -1,7 +1,6 @@
 import React from "react";
 // import logo from "../../assist/img/service-1.svg";
 import styles from "./WorkCard.module.scss";
-import data from "../../cardNote.json";
 
 const WorkCard = ({ work, ID }) => {
   const logo = require(`../../assist/img/${work.logo}`);

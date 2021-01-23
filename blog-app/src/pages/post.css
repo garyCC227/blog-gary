@@ -45,8 +45,9 @@ p {
   padding: 20px;
   border-radius: 4px;
   font-size: 16px;
+  max-width: 800px;
 } */
-blockquote {
+/* blockquote {
   border-left-width: 8px;
   margin-left: -2rem;
   margin-right: -2rem;
@@ -63,4 +64,12 @@ blockquote {
   font-style: italic;
   line-height: 1.625;
   color: #4a5568;
+} */
+
+code{
+  
+}
+
+.post-markdown img{
+  max-width: 800px !important;
 }
