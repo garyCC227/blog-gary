@@ -119,14 +119,14 @@
             "title":"UI/UX Design",
             "desc":"This is a project.This is a project.This is a project.This is a project. This is a project. This is a project. This is a project.",
             "link":"#",
-            "tags":["Python", "JavaScript", "Java"]
+            "tags":["Web", "API", "ML"]
         },
         "1002":{
             "logo":"logo.svg",
             "title":"test 1",
             "desc":"This is a project.This is a project.This is a project.This is a project. This is a project. This is a project. This is a project.",
             "link":"#",
-            "tags":["Python", "JavaScript"]
+            "tags":["ML"]
         },
         "1003":{
             "logo":"logo.svg",

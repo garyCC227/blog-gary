@@ -1,5 +1,4 @@
 import React from "react";
-
 // import logo from "../../assist/img/service-1.svg";
 import styles from "./WorkCard.module.scss";
 import data from "../../cardNote.json";
@@ -26,7 +25,7 @@ const WorkCard = ({ work, ID }) => {
 
           {<p> {work.desc}</p>}
 
-          <a href="https://www.w3schools.com/">Visit the work!</a>
+          <a className="ui inverted button" href="https://www.w3schools.com/" style={{display:'none'}}>Visit the work!</a>
           <div className={`${styles.tags}`}>{tagsUI}</div>
         </div>
       </div>
