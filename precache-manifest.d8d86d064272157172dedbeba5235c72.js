@@ -1,0 +1,42 @@
+self.__precacheManifest = (self.__precacheManifest || []).concat([
+  {
+    "revision": "9f1909c8afbab7b9fc81b831763294ef",
+    "url": "/blog-gary/index.html"
+  },
+  {
+    "revision": "923e63a7252c8685c9b3",
+    "url": "/blog-gary/static/css/main.32b235ca.chunk.css"
+  },
+  {
+    "revision": "0e76a78e0f0891d1ab43",
+    "url": "/blog-gary/static/js/2.fe86c71c.chunk.js"
+  },
+  {
+    "revision": "f4397f88bfd4c390e3817518294be012",
+    "url": "/blog-gary/static/js/2.fe86c71c.chunk.js.LICENSE.txt"
+  },
+  {
+    "revision": "923e63a7252c8685c9b3",
+    "url": "/blog-gary/static/js/main.6f6cd328.chunk.js"
+  },
+  {
+    "revision": "f18356161b1de479b760",
+    "url": "/blog-gary/static/js/runtime-main.4b1f349f.js"
+  },
+  {
+    "revision": "2c7b88b97807133bac9c0e99773da241",
+    "url": "/blog-gary/static/media/bg3.2c7b88b9.png"
+  },
+  {
+    "revision": "cb2f9e1f2aed09f114f539b9c8cc7b52",
+    "url": "/blog-gary/static/media/logo.cb2f9e1f.png"
+  },
+  {
+    "revision": "e7845795ba0309539df152c848a7ac67",
+    "url": "/blog-gary/static/media/logo.e7845795.svg"
+  },
+  {
+    "revision": "a297aa25a8fc43784cc65bf07ceea307",
+    "url": "/blog-gary/static/media/service-1.a297aa25.svg"
+  }
+]);
