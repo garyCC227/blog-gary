@@ -15,6 +15,10 @@ const Post = (props) => {
     document.querySelectorAll("pre code").forEach(block => {
       hljs.highlightBlock(block);
     });
+
+    document.querySelectorAll("table").forEach(table =>{
+      table.className += " ui celled striped table"
+    })
   }, [])
 
   const validId = parseInt(props.match.params.id);
