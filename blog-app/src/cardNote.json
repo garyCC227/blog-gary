@@ -93,30 +93,33 @@
     },
     "works": {
         "1001": {
-            "logo": "logo.svg",
+            "logo": "logo1.svg",
             "title": "UI/UX Design",
             "desc": "This is a project.This is a project.This is a project.This is a project. This is a project. This is a project. This is a project.",
             "link": "#",
+            "category":"Complete",
             "tags": [
                 "Web",
-                "API",
-                "ML"
+                "ML",
+                "Coding"
             ]
         },
         "1002": {
-            "logo": "logo.svg",
+            "logo": "logo2.svg",
             "title": "test 1",
             "desc": "This is a project.This is a project.This is a project.This is a project. This is a project. This is a project. This is a project.",
             "link": "#",
+            "category":"Developing",
             "tags": [
                 "ML"
             ]
         },
         "1003": {
-            "logo": "logo.svg",
+            "logo": "logo3.svg",
             "title": "test2",
             "desc": "This is a project.This is a project.This is a project.This is a project. This is a project. This is a project. This is a project.",
             "link": "#",
+            "category":"Developing",
             "tags": [
                 "Python",
                 "JavaScript",
@@ -128,11 +131,61 @@
             "title": "test3",
             "desc": "This is a project.This is a project.This is a project.This is a project. This is a project. This is a project. This is a project.",
             "link": "#",
+            "category":"Complete",
+            "tags": [
+                "Python",
+                "JavaScript",
+                "Java"
+            ]
+        },
+        "1005": {
+            "logo": "logo.svg",
+            "title": "test3",
+            "desc": "This is a project.This is a project.This is a project.This is a project. This is a project. This is a project. This is a project.",
+            "link": "#",
+            "category":"Complete",
+            "tags": [
+                "Python",
+                "JavaScript",
+                "Java"
+            ]
+        },
+        "1006": {
+            "logo": "logo.svg",
+            "title": "test3",
+            "desc": "This is a project.This is a project.This is a project.This is a project. This is a project. This is a project. This is a project.",
+            "link": "#",
+            "category":"Complete",
+            "tags": [
+                "Python",
+                "JavaScript",
+                "Java"
+            ]
+        },
+        "1007": {
+            "logo": "logo.svg",
+            "title": "test3",
+            "desc": "This is a project.This is a project.This is a project.This is a project. This is a project. This is a project. This is a project.",
+            "link": "#",
+            "category":"Complete",
+            "tags": [
+                "Python",
+                "JavaScript",
+                "Java"
+            ]
+        },
+        "1008": {
+            "logo": "logo.svg",
+            "title": "test3",
+            "desc": "This is a project.This is a project.This is a project.This is a project. This is a project. This is a project. This is a project.",
+            "link": "#",
+            "category":"Complete",
             "tags": [
                 "Python",
                 "JavaScript",
                 "Java"
             ]
         }
+
     }
 }

@@ -7,7 +7,7 @@ const WorkCard = ({ work, ID }) => {
 
   const tagsUI = work.tags.map((tag, index) => {
     return (
-      <div key={index.toString()} className={`ui black label ${styles.tag}`}>
+      <div key={index.toString()} className={`ui primary basic button ${styles.tag}`}>
         {tag}
       </div>
     );
