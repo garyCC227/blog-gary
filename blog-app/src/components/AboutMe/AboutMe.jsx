@@ -20,13 +20,14 @@ const AboutMe = ({})=>{
           <div class=' eleven wide column'>
             <h3 className={`ui dividing header ${styles['about-title']}`}>About Me</h3>
             <p className={styles.desc}>
-              I enjoy in coding, problem sovling, full-stack software
+              I enjoy in coding, problem solving with advanced algorithm, full-stack software
               development, machine learning, functional programming, algorithm
-              and data structure. I enjoy in coding, problem sovling, full-stack
-              software development, machine learning, functional programming,
-              algorithm and data structure. I enjoy in coding, problem sovling,
-              full-stack software development, machine learning, functional
-              programming, algorithm and data structure.
+              and data structure. I enjoy in coding, problem solving with advanced algorithm, full-stack software
+              development, machine learning, functional programming, algorithm
+              and data structure. 
+              I enjoy in coding, problem solving with advanced algorithm, full-stack software
+              development, machine learning, functional programming, algorithm
+              and data structure. 
             </p>
           </div>
         </div>

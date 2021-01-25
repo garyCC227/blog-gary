@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import hljs from "highlight.js";
@@ -66,6 +66,7 @@ function App() {
           <main className={classes.content}>
             <Head />
             <Switch>
+              <Route exact path="/" render={() => (<Redirect to="/blog-gary" />)} /> 
               <Route exact path='/blog-gary' component={Home} />
               <Route path='/post/:id' render={(props) => <Post {...props} />} />
               <Route path='/about' component={About} />

@@ -24,7 +24,7 @@ const WorkCard = ({ work, ID }) => {
 
           {<p> {work.desc}</p>}
 
-          <a className="ui inverted button" href="https://www.w3schools.com/" style={{display:'none'}}>Visit the work!</a>
+          <a className="ui inverted button" href={work.link}  target='_blank' style={{display:'none'}}>Visit the work!</a>
           <div className={`${styles.tags}`}>{tagsUI}</div>
         </div>
       </div>
