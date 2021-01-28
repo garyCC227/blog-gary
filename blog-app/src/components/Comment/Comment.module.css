@@ -1,0 +1,110 @@
+
+
+.comment-box {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin: auto;
+  padding: 30px;
+}
+.CommentTitle,
+.comment,
+.metadata,
+.submitform {
+  width: 100%;
+}
+
+.CommentTitle {
+  border-bottom: 1px solid #ccc; 
+  padding-bottom: 10px;
+  color: #B8860B;
+  font-size: 16px;
+}
+.comment {
+  background: #F8F8FF;
+  margin-top: 20px;
+  padding: 20px 20px 14px 20px;
+}
+.comment .content {
+  width: 100%;
+  font-size: 15px;
+  color: #333;
+}
+.metadata{
+  margin-top: 10px;
+}
+.metadata .CommentAuthor,
+.metadata .CommentDate,
+.metaData .option{
+  display: inline-block;
+  color: #A9A9A9;
+}
+.metadata .CommentAuthor,
+.metadata .CommentDate {
+  margin-right: 30px;
+}
+.metadata .option {
+  margin-right: 6px;
+}
+.metadata .option:hover{
+  text-decoration: underline;
+}
+.submitform {
+  margin-top: 20px;
+}
+.editContent textarea{
+  width:88%;
+  min-height: 50px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+
+}
+.editContent button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #97CBFF;
+  background: #97CBFF;
+  color: #fff;
+  position: relative;
+  left: 20px;
+  top:-19px;
+}
+.editContent button:hover{
+  cursor: pointer;
+  background: #FF5151;
+  border: 1px solid #FF5151;
+}
+
+.warning {
+  color: red;
+}
+.form-row {
+  padding: 10px 0;
+}
+.form-row input[type='text'],
+.form-row button,
+.form-row textarea {
+  border-radius: 2px;
+}
+.form-row input[type='text'],
+.form-row textarea {
+  width: 50%;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+}
+.form-row textarea {
+  min-height: 100px;
+}
+.form-row button {
+  padding: 6px;
+  width: 80px;
+  background: #97CBFF;
+  border: 1px solid #97CBFF;
+  color: #fff;
+  font-size: 13px;
+}
+.form-row button:hover {
+  cursor: pointer;
+}

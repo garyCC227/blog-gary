@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import { Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Markdown from "react-markdown";
@@ -6,10 +6,33 @@ import hljs from "highlight.js";
 
 import "./post.css";
 import post from "../cardNote.json";
-
+import CommentBox from '../components/Comment';
+import app from '../utils/firebaseConfig.js';
 
 const Post = (props) => {
+  const [comments, setComments] = useState(null);
+  console.log(comments);
+  if (comments !== null){
+    console.log(comments["ID4"]);
+    
+  }
   
+  useEffect(()=>{
+    app.database().ref('comments')
+    .get()
+    .then(res=>setComments(res.val()['Comments']))
+    
+    // let ref= app.database().ref('comments/Comments')
+    // ref.child("ID4")  
+    // .set({
+    //     "author":"tester2",
+    //     "date":new Date().toISOString(),
+    //     "content":"Comment2      dasdsadasdasdsas",
+    //     "child":[3]
+    // })
+
+  }, [])
+
   useEffect(() => {
     console.log("here");
     document.querySelectorAll("pre code").forEach(block => {
@@ -56,11 +79,13 @@ const Post = (props) => {
                 {fetchPost.date} by <span>Linchen Chen</span>
               </p>
             </div>
-
             <Markdown className="post-markdown" children={fetchPost.content} escapeHtml={false} />
           </div>
         </div>
       </div>
+      { comments !== null &&
+        <CommentBox  data={[comments['ID4'], comments['ID4']]}/>
+      }
     </div>
   );
 };

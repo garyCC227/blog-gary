@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 import { makeStyles } from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import hljs from "highlight.js";
@@ -20,17 +20,17 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight:'100%',
+    minHeight: '100%',
   },
   innerBox: {
     display: 'flex',
     flexDirection: 'column',
-    width:'1100px',
-    margin:'30px auto',
-    padding:'10px',
-    backgroundColor:'#fafafa',
-    borderRadius:"50px",
-    alignItems:'center'
+    width: '1100px',
+    margin: '30px auto',
+    padding: '10px',
+    backgroundColor: '#fafafa',
+    borderRadius: "50px",
+    alignItems: 'center'
   },
   appBar: {
     width: `calc(100% - ${drawerWidth}px)`,
@@ -66,10 +66,11 @@ function App() {
           <main className={classes.content}>
             <Head />
             <Switch>
-              <Route exact path='/blog-gary' component={Home} />
+              <Route exact path="/" render={() => (<Redirect to="/blog" />)} />
+              <Route exact path='/blog' component={Home} />
               <Route path='/post/:id' render={(props) => <Post {...props} />} />
               <Route path='/about' component={About} />
-              <Route path='/works' component={Work} /> 
+              <Route path='/works' component={Work} />
               <Route path='*' component={NotFound} />
             </Switch>
           </main>
