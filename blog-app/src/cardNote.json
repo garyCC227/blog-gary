@@ -5,7 +5,7 @@
             "title": "RESTful API with Spring framework",
             "author": "Linchen Chen",
             "date": "Jan 16 2021",
-            "commentIds":[1,2],
+            "rootCommentIds":[1,2],
             "tag": [
                 "API"
             ],
@@ -15,7 +15,7 @@
             "id": 2,
             "title": "MUST HAVE vscode extensions",
             "author": "Linchen Chen",
-            "commentIds":[],
+            "rootCommentIds":[],
             "date": "Jan 23 2021",
             "tag": [
                 "clean code"
@@ -27,7 +27,7 @@
             "title": "Python Collection Module",
             "author": "Linchen Chen",
             "date": "Jan 24 2021",
-            "commentIds":[],
+            "rootCommentIds":[],
             "tag": [
                 "clean code"
             ],

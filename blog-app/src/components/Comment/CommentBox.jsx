@@ -47,6 +47,8 @@ class CommentBox extends Component {
     }); 
   }
 
+  
+
   render() {
     return (
       <div className={styles['comment-box']}>
