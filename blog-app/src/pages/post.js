@@ -11,16 +11,15 @@ import app from '../utils/firebaseConfig.js';
 
 const Post = (props) => {
   const [comments, setComments] = useState(null);
-  console.log(comments);
-  if (comments !== null){
-    console.log(comments["ID4"]);
+  // if (comments !== null){
+  //   console.log(comments["ID4"]);
     
-  }
+  // }
   
   useEffect(()=>{
     app.database().ref('comments')
     .get()
-    .then(res=>setComments(res.val()['Comments']))
+    .then(res=>setComments(res.val()))
     
     // let ref= app.database().ref('comments/Comments')
     // ref.child("ID4")  
@@ -30,6 +29,10 @@ const Post = (props) => {
     //     "content":"Comment2      dasdsadasdasdsas",
     //     "child":[3]
     // })
+
+    app.database().ref('blogs')
+    .get()
+    .then(res=>console.log(res.val()))
 
   }, [])
 
@@ -83,9 +86,9 @@ const Post = (props) => {
           </div>
         </div>
       </div>
-      { comments !== null &&
+      {/* { comments !== null &&
         <CommentBox  data={[comments['ID4'], comments['ID4']]}/>
-      }
+      } */}
     </div>
   );
 };
