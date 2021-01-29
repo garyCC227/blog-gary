@@ -1,7 +1,8 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import { useHistory } from "react-router-dom";
 
 import styles from "./Card.module.css";
+import app from '../../utils/firebaseConfig.js';
 
 const Card = ({ blog, tagsMeta }) => {
   let history = useHistory();
@@ -19,10 +20,32 @@ const Card = ({ blog, tagsMeta }) => {
         {label}
       </a>)
   })
+  
+/*   useEffect(()=>{
+    //app.database().ref('comments')
+    //.get()
+    //.then(res=>setComments(res.val()['Comments']))
+    
+    // let ref= app.database().ref('comments/Comments')
+    // ref.child("ID4")  
+    // .set({
+    //     "author":"tester2",
+    //     "date":new Date().toISOString(),
+    //     "content":"Comment2      dasdsadasdasdsas",
+    //     "child":[3]
+    // })
+    console.log("check")
+    app.database().ref('blogs')
+    .get()
+    .then(res=>console.log(res.val()))
+    
+
+  }, []) */
 
 
   return (
     <div className={`ui card ${styles["card-size"]}`} onClick={()=>redirect(blog.id)}>
+     
       <div className='content'>
         <div>
           {showCardTags}
@@ -34,6 +57,7 @@ const Card = ({ blog, tagsMeta }) => {
         <div className={styles["my-desc"]}>
           <p>
             {blog.content}
+            {console.log("check")}
           </p>
         </div>
 
