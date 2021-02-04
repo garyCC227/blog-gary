@@ -1,5 +1,5 @@
 {
-  "LastID": "3",
+  "LastID": "4",
   "Comments": {
     "ID1": {
       "author":"Owen",
@@ -17,6 +17,12 @@
       "author":"Gary",
       "date":"2019/2/2 下午3:04:05",
       "content": "Comment3",
+      "child": []
+    },
+    "ID4": {
+      "author":"test4",
+      "date":"2019/2/2 下午3:04:05",
+      "content": "Comment4",
       "child": []
     }
   }

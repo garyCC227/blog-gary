@@ -11,7 +11,7 @@ const LabelList = ({ tagsMeta }) => {
     filteredBlogs:[_, setFilteredBlogs]
   } = React.useContext(FilterContext);
 
-  const blogs = data['blogs']
+  const blogs = Object.values(data['blogs']) //TODO: fetch data
   
   const click = (evt, tag) => {
     const isChecked = evt.target.checked;

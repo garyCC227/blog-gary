@@ -73,3 +73,10 @@ code{
 .post-markdown img{
   max-width: 800px !important;
 }
+
+.post-loader{
+  margin:200px 0 0 0 !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

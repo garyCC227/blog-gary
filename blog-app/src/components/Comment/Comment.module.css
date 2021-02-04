@@ -52,13 +52,14 @@
 .submitform {
   margin-top: 20px;
 }
-.editContent textarea{
+
+.editContent .textarea{
   width:88%;
   min-height: 50px;
   border-radius: 3px;
   border: 1px solid #ccc;
   padding: 5px 10px;
-
+  margin-top:10px ;
 }
 .editContent button {
   width: 40px;
@@ -107,4 +108,9 @@
 }
 .form-row button:hover {
   cursor: pointer;
+}
+
+.avatar{
+  width: 30px !important;
+  height: 30px !important;
 }

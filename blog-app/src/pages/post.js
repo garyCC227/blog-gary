@@ -3,12 +3,18 @@ import { Redirect } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Markdown from "react-markdown";
 import hljs from "highlight.js";
+import SyncLoader from "react-spinners/SyncLoader";
+import { css } from "@emotion/core";
 
 import "./post.css";
 import post from "../cardNote.json";
 import CommentBox from '../components/Comment';
 import app from '../utils/firebaseConfig.js';
 
+const override = css`
+  display: block;
+  margin: 200px 0 0 0;
+`;
 
 
 const Post = (props) => {
@@ -16,7 +22,6 @@ const Post = (props) => {
   const [posts, setPosts] = useState(null);
   // if (comments !== null){
   //   console.log(comments["ID4"]);
-
   // }
 
 
@@ -52,17 +57,19 @@ const Post = (props) => {
   }, [])
 
   useEffect(() => {
-    console.log("here");
-    console.log("checkhere",fetchPost);
-    console.log("checkhere2",posts);
-    document.querySelectorAll("pre code").forEach(block => {
-      hljs.highlightBlock(block);
-    });
+    if(posts !== null){
+      document.querySelectorAll("pre code").forEach(block => {
+        hljs.highlightBlock(block);
+      });
 
-    document.querySelectorAll("table").forEach(table => {
-      table.className += " ui celled striped table"
-    })
-  }, [posts !== null])
+      document.querySelectorAll("table").forEach(table => {
+        table.className += " ui celled striped table"
+      })
+
+      console.log(posts);
+      
+    }
+  }, [posts])
 
 
   const validId = parseInt(props.match.params.id);
@@ -72,8 +79,8 @@ const Post = (props) => {
 
   const fetchPost = {};
   //console.log("postjson",post['blogs']);
-  console.log('posts', posts);
-  console.log('comments', comments);
+  //console.log('posts', posts);
+  //console.log('comments', comments);
   let postExists = false;
 
 /* 
@@ -90,31 +97,29 @@ const Post = (props) => {
     }
     );   */ 
 
-
    //post['blogs'].forEach((post, i) => {
-  posts !== null && posts.forEach((eachPost, i) => {
-    console.log("did1");
-    console.log("did1Posts", posts);
-    if (eachPost !== null && validId === eachPost.id) {
-      console.log("did2");
-      fetchPost.title = eachPost.title ? eachPost.title : "No title given";
-      console.log(fetchPost.title);
-      fetchPost.date = eachPost.date ? eachPost.date : "No date given";
-      fetchPost.author = eachPost.author ? eachPost.author : "No author given";
-      fetchPost.content = eachPost.content ? eachPost.content : "No content given";
-      postExists = true;
-    }
-  }
-  );
- 
+  if(posts !== null && posts[`blog${validId}`]!== undefined){
+    let eachPost = posts[`blog${validId}`]
+    fetchPost.title = eachPost.title ? eachPost.title : "No title given";
+    //console.log(fetchPost.title);
+    fetchPost.date = eachPost.date ? eachPost.date : "No date given";
+    fetchPost.author = eachPost.author ? eachPost.author : "No author given";
+    fetchPost.content = eachPost.content ? eachPost.content : "No content given";
+    fetchPost.rootCommentIDs=eachPost.rootCommentIds ? eachPost.rootCommentIds: null;
+    fetchPost.AllComments=eachPost.AllComments ? eachPost.AllComments: null;
+    postExists = true;
+  
+  };
 
 
   if (posts !== null && postExists === false) {
     return <Redirect to="/404" />;
   }
-
   return (
-    <div>
+    <>
+    { posts === null?
+      <SyncLoader color={'#9afcf1'} loading={true} css={override} size={40} />
+    :(<div>
       <Helmet>
         <meta charSet="utf-8" />
         <title>{fetchPost.title}</title>
@@ -133,11 +138,15 @@ const Post = (props) => {
         </div>
 
       </div>
-      {comments !== null &&
-        <CommentBox data={[comments['ID3'], comments['ID3']]} />
-
+      {posts !== null && postExists && comments !== null &&
+        
+        <CommentBox  blogId={validId} db={fetchPost.AllComments} rootCommentsIds={fetchPost.rootCommentIDs} />
+        
+        
       }
-    </div>
+    </div>)
+    }
+    </>
   );
 };
 
