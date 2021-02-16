@@ -1,6 +1,6 @@
 import React from 'react'
 
-import data from '../cardNote.json';
+import data from '../posts.json';
 
 export const FilterContext = React.createContext(null)
 
@@ -9,7 +9,6 @@ export default ({ children }) => {
   const [blogCount, setBlogCount] = React.useState(data.blogs.length);
   const blogs = Object.values(data.blogs);
   const [filteredBlogs, setFilteredBlogs] = React.useState(blogs);
-
   
   const store = {
     tags: [selectedTags, setSelectedTags],

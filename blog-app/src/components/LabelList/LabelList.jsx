@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import styles from "./LabelList.module.css";
-import data from "../../cardNote.json";
+import data from "../../posts.json";
 import {FilterContext} from "../../utils/store";
 
 const LabelList = ({ tagsMeta }) => {

@@ -2,7 +2,6 @@ import React, {useEffect, useState} from "react";
 import { useHistory } from "react-router-dom";
 
 import styles from "./Card.module.css";
-import app from '../../utils/firebaseConfig.js';
 
 const Card = ({ blog, tagsMeta }) => {
   let history = useHistory();
