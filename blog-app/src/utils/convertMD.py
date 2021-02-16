@@ -11,17 +11,18 @@ import json
 
 ##configure the blog meta-data
 # read the md content into oneline string
-file = r"../content/py_collections.md" #TODO: 1. Modify file name
+file = r"../content/binaryTree1.md" #TODO: 1. Modify file name
 with open(file,'r', encoding='utf-8') as f:
     output = f.read()
     content = rf'{output}'
 
 #Blog meta data. TODO: 2. modify this everytime
+new_id = 68716579425
 new_blog = {
-  "id":3, #int
-  "title":"Python Collection Module", #string
+  "id":new_id, #int
+  "title":"BinaryTree Coding 1", #string
   "author":"Linchen Chen", #string
-  "date":"Jan 24 2021", #string
+  "date":"Feb 16 2021", #string
   "tag":["clean code"],  #array
   "content":content #string
 }
@@ -30,25 +31,29 @@ new_blog = {
 
 
 #read the old database
-data_path = r"../cardNote.json"
+data_path = r"../posts.json"
 with open(data_path, 'r') as f:
   data = json.loads(f.read())
 
 # update database
 blogs = data['blogs']
-existed = False
-for index, blog in enumerate(blogs):
-  #update existed blog
-  if new_blog["id"] == blog["id"]:
-    blogs[index] = new_blog
-    existed = True
-    break
+blogs[new_id] = new_blog
+data['blogs'] = blogs
 
-if existed:
-  data['blogs'] = blogs
-else:
-  #if it's new blog
-  data['blogs'].append(new_blog)
+
+# existed = False
+# for index, blog in enumerate(blogs):
+#   #update existed blog
+#   if new_blog["id"] == blog["id"]:
+#     blogs[index] = new_blog
+#     existed = True
+#     break
+
+# if existed:
+#   data['blogs'] = blogs
+# else:
+#   #if it's new blog
+#   data['blogs'].append(new_blog)
 
 with open(data_path, 'w') as f:
   json.dump(data, f, indent=4)

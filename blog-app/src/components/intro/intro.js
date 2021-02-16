@@ -1,5 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import {Link} from "react-router-dom";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
@@ -52,7 +53,7 @@ const Intro = ({name, occupation, desc, links}) => {
             {desc}
           </p>
           <div className='social-link' className={styles['my-button']}>
-            <a href={links.aboutMe}>
+            <Link to={links.aboutMe}>
               <Button
                 variant='contained'
                 classes={{
@@ -63,7 +64,7 @@ const Intro = ({name, occupation, desc, links}) => {
                 About Me
               </Button>
               
-            </a>
+            </Link>
             {/* <a href={links.aboutMe} className={styles['my-button']}>
                 <Button variant='outlined'  
                 classes={{

@@ -1,5 +1,5 @@
 .blog-container {
-  width: 100%;
+  min-width: 1000px;
   margin: 0 auto;
 }
 .blog-body {
@@ -17,6 +17,10 @@
   margin-bottom: 30px;
   padding-bottom: 0px;
   border-bottom: 1px solid #d0d0d0;
+}
+
+.post-body{
+  width: 100%;
 }
 
 .post-head h2 {

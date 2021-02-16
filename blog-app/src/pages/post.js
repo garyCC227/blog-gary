@@ -31,9 +31,6 @@ const Post = (props) => {
   })
 
 
-
-  console.log(post);
-
   useEffect(() => {
     const validId = parseInt(props.match.params.id);
     
@@ -50,7 +47,7 @@ const Post = (props) => {
   }, [])
 
   useEffect(() => {
-    if(posts !== null){
+    if(post !== null){
       document.querySelectorAll("pre code").forEach(block => {
         hljs.highlightBlock(block);
       });
@@ -60,7 +57,7 @@ const Post = (props) => {
       })
 
     }
-  }, [posts])
+  }, [post])
 
 
   const validId = parseInt(props.match.params.id);
