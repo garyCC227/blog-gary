@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import styles from "./works.module.css";
 import WorkCard from "../../components/WorkCard";
-import data from "../../cardNote.json";
+import data from "../../posts.json";
 
 const Works = ({}) => {
   const [works, setWorks] = useState(data.works);

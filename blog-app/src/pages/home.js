@@ -4,7 +4,7 @@ import "./home.css";
 import Intro from "../components/intro/intro";
 import LabelList from "../components/LabelList";
 import CardList from "../components/CardList";
-import cardData from "../cardNote.json";
+import cardData from "../posts.json";
 import FilterProvider from '../utils/store';
 
 const Home = () => {

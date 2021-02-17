@@ -104,7 +104,7 @@ Intro.propTypes = {
 Intro.defaultProps = {
   name: "Linchen Chen",
   occupation: "Software Engineering Student at UNSW Sydney",
-  desc:"Specialized in React, Python, Machine Learning, C++.",
+  desc:"Specialized in React, Python, Machine Learning, C++, Javascript, Java, SQL, Software development for both front-end and back-end, Data Analysis, RESTful API development",
   links:{
     contactMe:'#',
     aboutMe:"/about",

@@ -34,7 +34,7 @@ const EducationUI = ()=>{
             <h3 className='ui header'>
               University of New South Wales
               <h4 className={`sub header ${styles["sub-header"]}`}>
-                Bachelor of Engineering, Software(honours) • 2017 - 2020
+                Bachelor of Engineering, Software(honours) • 2017 - 2021
               </h4>
             </h3>
             <p className={styles.desc}>
