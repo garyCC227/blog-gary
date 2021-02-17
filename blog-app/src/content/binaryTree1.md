@@ -1,6 +1,6 @@
 # Binary Tree LeetCode Question
 ---
-### `1. Inorder Tree Traversal`
+### `1. Inorder Tree Traversal(94)`
 ***difficulty: medium***
 ***Link: [leetcode link](https://leetcode.com/problems/binary-tree-inorder-traversal/)***
 #### Solution
@@ -57,7 +57,7 @@ class Solution:
 ```
 
 
-## `2.Same BinaryTree`
+## `2.Same BinaryTree(100)`
 ***difficulty: easy***
 ***Link: [leetcode link](https://leetcode.com/problems/same-tree/)***
 #### Solution
@@ -77,7 +77,7 @@ class Solution:
                )
 ```
 
-## `3.Binary levelOrder traversal`
+## `3.Binary levelOrder traversal(102)`
 ***difficulty: medium***
 ***Link: [leetcode link](https://leetcode.com/problems/binary-tree-level-order-traversal/)***
 #### Solution
@@ -104,7 +104,7 @@ class Solution:
       self.levelOrderSolution(node.right, lvl+1, ans)
 ```
 
-## `4.BinaryTree pruning`
+## `4.BinaryTree pruning(814)`
 ***difficulty: medium***
 ***Link: [leetcode link](https://leetcode.com/problems/binary-tree-pruning/)***
 #### Solution, fastest solution in leetcode
@@ -124,4 +124,64 @@ public:
     return nullptr;
   }
 };
+```
+
+## `5.Path Sum(112)`
+***difficulty: easy***
+
+***Link: [leetcode link](https://leetcode.com/problems/path-sum/)***
+#### Solution
+`time complexity: O(n)`
+
+`space complexity: Null`
+```Python
+class Solution:
+    def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
+        if not root: return False
+        return self.sol(root, 0, targetSum)
+    
+    def sol(self, node: TreeNode, partSum:int, targetSum:int) -> bool:
+        if node.left and node.right:
+            return (self.sol(node.left, partSum + node.val, targetSum) or
+                    self.sol(node.right, partSum + node.val, targetSum))
+        elif node.left:
+            return self.sol(node.left, partSum + node.val, targetSum)
+        elif node.right:
+            return self.sol(node.right, partSum + node.val, targetSum)
+        else:
+            #check path sum
+            if partSum + node.val == targetSum:
+                return True
+            else:
+                return False
+```
+
+## `6.Sum root to leaf number(129)`
+***difficulty: easy***
+
+***Link: [leetcode link](https://leetcode.com/problems/sum-root-to-leaf-numbers/)***
+#### Solution
+`time complexity: O(n)`
+
+`space complexity: Null`
+
+```Python
+class Solution:
+    def sumNumbers(self, root: TreeNode) -> int:
+        if not root: return 0
+        ans = self.solution(root, 0)
+        return ans
+    
+    def solution(self, node:TreeNode, subSum: int) -> None:
+
+        if node.left and node.right:
+            return (self.solution(node.left, subSum * 10 + node.val) +
+            self.solution(node.right, subSum * 10 + node.val))
+        elif node.left:
+            return self.solution(node.left, subSum * 10 + node.val)
+        elif node.right:
+            return self.solution(node.right, subSum * 10 + node.val)
+        else:
+            
+            return subSum*10 + node.val 
 ```
