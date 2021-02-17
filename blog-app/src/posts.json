@@ -107,7 +107,7 @@
             "tag": [
                 "Coding"
             ],
-            "content": "# Binary Tree LeetCode Question\n---\n### `1. Inorder Tree Traversal`\n***difficulty: medium***\n***Link: [leetcode link](https://leetcode.com/problems/binary-tree-inorder-traversal/)***\n#### Solution\n\n##### 1. Iterative \n`time complexity: O(n)`\n`space complexity:O(h)`\n```Python\n# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nfrom collections import deque\nclass Solution:\n    def inorderTraversal(self, root: TreeNode) -> List[int]:\n        s = deque()\n        res = []\n        curr = root\n        \n        while True:\n            if curr is not None:\n                s.append(curr)\n                curr = curr.left\n                \n            elif(s):\n                curr = s.pop()\n                res.append(curr.val)\n                curr = curr.right\n            \n            else:\n                break\n                \n        return res\n```\n\n##### 2. Recursive\n`time complexity: O(n)`\n`space complexity:O(n)`\n```Python\nclass Solution:\n    def inorderTraversal(self, root: TreeNode) -> List[int]:\n        res = []\n        self.solution(root, res)\n                \n        return res\n    \n    def solution(self, node, res):\n        if node == None:return\n        self.solution(node.left, res)\n        res.append(node.val)\n        self.solution(node.right, res)\n```\n\n\n## `2.Same BinaryTree`\n***difficulty: easy***\n***Link: [leetcode link](https://leetcode.com/problems/same-tree/)***\n#### Solution\n`time complexity: O(n)`\n`space complexity: null`\n```Python\n# Author:Linchen chen # Date\uff1a16/02/2021\nclass Solution:\n  def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:\n      if p is None and q is None: return True\n      if p is None or q is None: return False # if either of the node is empty\n      if p.val != q.val: return False # compare node.value\n      else:\n        return (True and\n               self.isSameTree(p.left, q.left) and \n                self.isSameTree(p.right, q.right)\n               )\n```\n\n## `3.Binary levelOrder traversal`\n***difficulty: medium***\n***Link: [leetcode link](https://leetcode.com/problems/binary-tree-level-order-traversal/)***\n#### Solution\n`time complexity: O(n)`\n`space complexity: O(n)`\n\n```Python\n# Author:Linchen chen # Date\uff1a16/02/202\nclass Solution:\n    def levelOrder(self, root: TreeNode) -> List[List[int]]:\n      lvl = 0; ans = []\n      self.levelOrderSolution(root, lvl, ans)\n      return ans\n    \n    # DFS\n    def levelOrderSolution(self, node:TreeNode, lvl:int, ans:List[List[int]]) -> None:\n      if node is None: return\n      if lvl >= len(ans):\n        ans.append([node.val])\n      else:\n        ans[lvl].append(node.val)\n        \n      self.levelOrderSolution(node.left, lvl+1, ans)\n      self.levelOrderSolution(node.right, lvl+1, ans)\n```\n\n## `4.BinaryTree pruning`\n***difficulty: medium***\n***Link: [leetcode link](https://leetcode.com/problems/binary-tree-pruning/)***\n#### Solution, fastest solution in leetcode\n`time complexity: O(n)`\n`space complexity: O(n)`\n```c++\n//C++ solution, Linchen Chen, 16/02/2021\nclass Solution {\npublic:\n  TreeNode* pruneTree(TreeNode* root) {\n    if(!root) return root;\n    root->left = pruneTree(root->left);\n    root->right = pruneTree(root->right);\n    if(root->val == 1 || root->left || root->right){\n      return root;\n    }\n    return nullptr;\n  }\n};\n```"
+            "content": "# Binary Tree LeetCode Question\n---\n### `1. Inorder Tree Traversal(94)`\n***difficulty: medium***\n***Link: [leetcode link](https://leetcode.com/problems/binary-tree-inorder-traversal/)***\n#### Solution\n\n##### 1. Iterative \n`time complexity: O(n)`\n`space complexity:O(h)`\n```Python\n# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nfrom collections import deque\nclass Solution:\n    def inorderTraversal(self, root: TreeNode) -> List[int]:\n        s = deque()\n        res = []\n        curr = root\n        \n        while True:\n            if curr is not None:\n                s.append(curr)\n                curr = curr.left\n                \n            elif(s):\n                curr = s.pop()\n                res.append(curr.val)\n                curr = curr.right\n            \n            else:\n                break\n                \n        return res\n```\n\n##### 2. Recursive\n`time complexity: O(n)`\n`space complexity:O(n)`\n```Python\nclass Solution:\n    def inorderTraversal(self, root: TreeNode) -> List[int]:\n        res = []\n        self.solution(root, res)\n                \n        return res\n    \n    def solution(self, node, res):\n        if node == None:return\n        self.solution(node.left, res)\n        res.append(node.val)\n        self.solution(node.right, res)\n```\n\n\n## `2.Same BinaryTree(100)`\n***difficulty: easy***\n***Link: [leetcode link](https://leetcode.com/problems/same-tree/)***\n#### Solution\n`time complexity: O(n)`\n`space complexity: null`\n```Python\n# Author:Linchen chen # Date\uff1a16/02/2021\nclass Solution:\n  def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:\n      if p is None and q is None: return True\n      if p is None or q is None: return False # if either of the node is empty\n      if p.val != q.val: return False # compare node.value\n      else:\n        return (True and\n               self.isSameTree(p.left, q.left) and \n                self.isSameTree(p.right, q.right)\n               )\n```\n\n## `3.Binary levelOrder traversal(102)`\n***difficulty: medium***\n***Link: [leetcode link](https://leetcode.com/problems/binary-tree-level-order-traversal/)***\n#### Solution\n`time complexity: O(n)`\n`space complexity: O(n)`\n\n```Python\n# Author:Linchen chen # Date\uff1a16/02/202\nclass Solution:\n    def levelOrder(self, root: TreeNode) -> List[List[int]]:\n      lvl = 0; ans = []\n      self.levelOrderSolution(root, lvl, ans)\n      return ans\n    \n    # DFS\n    def levelOrderSolution(self, node:TreeNode, lvl:int, ans:List[List[int]]) -> None:\n      if node is None: return\n      if lvl >= len(ans):\n        ans.append([node.val])\n      else:\n        ans[lvl].append(node.val)\n        \n      self.levelOrderSolution(node.left, lvl+1, ans)\n      self.levelOrderSolution(node.right, lvl+1, ans)\n```\n\n## `4.BinaryTree pruning(814)`\n***difficulty: medium***\n***Link: [leetcode link](https://leetcode.com/problems/binary-tree-pruning/)***\n#### Solution, fastest solution in leetcode\n`time complexity: O(n)`\n`space complexity: O(n)`\n```c++\n//C++ solution, Linchen Chen, 16/02/2021\nclass Solution {\npublic:\n  TreeNode* pruneTree(TreeNode* root) {\n    if(!root) return root;\n    root->left = pruneTree(root->left);\n    root->right = pruneTree(root->right);\n    if(root->val == 1 || root->left || root->right){\n      return root;\n    }\n    return nullptr;\n  }\n};\n```\n\n## `5.Path Sum(112)`\n***difficulty: easy***\n\n***Link: [leetcode link](https://leetcode.com/problems/path-sum/)***\n#### Solution\n`time complexity: O(n)`\n\n`space complexity: Null`\n```Python\nclass Solution:\n    def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:\n        if not root: return False\n        return self.sol(root, 0, targetSum)\n    \n    def sol(self, node: TreeNode, partSum:int, targetSum:int) -> bool:\n        if node.left and node.right:\n            return (self.sol(node.left, partSum + node.val, targetSum) or\n                    self.sol(node.right, partSum + node.val, targetSum))\n        elif node.left:\n            return self.sol(node.left, partSum + node.val, targetSum)\n        elif node.right:\n            return self.sol(node.right, partSum + node.val, targetSum)\n        else:\n            #check path sum\n            if partSum + node.val == targetSum:\n                return True\n            else:\n                return False\n```\n\n## `6.Sum root to leaf number(129)`\n***difficulty: easy***\n\n***Link: [leetcode link](https://leetcode.com/problems/sum-root-to-leaf-numbers/)***\n#### Solution\n`time complexity: O(n)`\n\n`space complexity: Null`\n\n```Python\nclass Solution:\n    def sumNumbers(self, root: TreeNode) -> int:\n        if not root: return 0\n        ans = self.solution(root, 0)\n        return ans\n    \n    def solution(self, node:TreeNode, subSum: int) -> None:\n\n        if node.left and node.right:\n            return (self.solution(node.left, subSum * 10 + node.val) +\n            self.solution(node.right, subSum * 10 + node.val))\n        elif node.left:\n            return self.solution(node.left, subSum * 10 + node.val)\n        elif node.right:\n            return self.solution(node.right, subSum * 10 + node.val)\n        else:\n            \n            return subSum*10 + node.val \n```\n"
         }
     },
     "tags": {
@@ -130,7 +130,7 @@
             "title": "Maker Game",
             "desc": "Due to COVID effect, migration occur often in India. Thus, We help Pollinate Group to develope a data visualization tool to help with visualizing slum data. We utilize ReactJS to visualize slum data over a satellite map, and train a model  to detect slum with satellite image",
             "link": "https://github.com/garyCC227/makergame",
-            "category":"Complete",
+            "category": "Complete",
             "tags": [
                 "ReactJS web",
                 "ML",
@@ -142,12 +142,11 @@
             "title": "Skin Cancer App",
             "desc": "React-native mobile app to detect skin cancer, such as Melanoma. We construct and train an image classification model to detect Melanoma in Pytorch, and build a API to connect the model with front-end ",
             "link": "https://github.com/garyCC227/skin_cancer_app",
-            "category":"Complete",
+            "category": "Complete",
             "tags": [
                 "ML",
                 "API",
                 "React-Native"
-
             ]
         },
         "1003": {
@@ -155,7 +154,7 @@
             "title": "Puzzle Game",
             "desc": "A 2D graphic puzzle game develope in Java, and we generate the puzzle with our own and amazing algorithm",
             "link": "https://github.com/garyCC227/2511-project",
-            "category":"Complete",
+            "category": "Complete",
             "tags": [
                 "Java"
             ]
@@ -165,7 +164,7 @@
             "title": "Spring RESTful API",
             "desc": "A simple RESTful API that builds with Java and Spring framework",
             "link": "https://github.com/garyCC227/RESTful_simple",
-            "category":"Complete",
+            "category": "Complete",
             "tags": [
                 "API",
                 "Java",
@@ -177,7 +176,7 @@
             "title": "Thesis",
             "desc": "Honour thesis in domain adaptation and image classification research.",
             "link": "https://github.com/garyCC227/thesisWork",
-            "category":"Complete",
+            "category": "Complete",
             "tags": [
                 "Python",
                 "ML",
