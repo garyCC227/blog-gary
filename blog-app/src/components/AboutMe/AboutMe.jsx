@@ -5,7 +5,7 @@ import {AiOutlineFire} from "react-icons/ai";
 
 import styles from "./AboutMe.module.css";
 
-const AboutMe = ({})=>{
+const AboutMe = ()=>{
   return (
     <div class={`ui grid ${styles["my-section"]}`}>
         <div class={`row`}>

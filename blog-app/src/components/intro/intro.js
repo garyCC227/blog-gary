@@ -52,7 +52,7 @@ const Intro = ({name, occupation, desc, links}) => {
           <p className='content'>
             {desc}
           </p>
-          <div className='social-link' className={styles['my-button']}>
+          <div className={styles['my-button']}>
             <Link to={links.aboutMe}>
               <Button
                 variant='contained'
@@ -73,12 +73,12 @@ const Intro = ({name, occupation, desc, links}) => {
                 }}>About Me</Button>
               </a> */}
             <span style={{marginLeft:'20px'}}>
-              <a href={links.github} target="_blank">
+              <a rel="noopener noreferrer" href={links.github} target="_blank">
                 <IconButton>
                   <FaGithub />
                 </IconButton>
               </a>
-              <a href={links.linkedin} target="_blank">
+              <a rel="noopener noreferrer" href={links.linkedin} target="_blank">
               <IconButton>
                 <FaLinkedin />
                 </IconButton>

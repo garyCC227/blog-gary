@@ -16,6 +16,15 @@ const CardList = ({tagsMeta}) => {
   const [loadOnce, setLoadOnce] = useState(false);
   const [hasMore, setHasMore] = useState(true);
 
+  const increaseFilteredEnd = () => {
+    if (end+n > filteredBlogs.length){
+      setEnd(filteredBlogs.length);
+      setHasMore(false)
+    }else{
+      setEnd(prevEnd=>(prevEnd+=n));
+    }
+  }
+
   //only run this when the application first load
   useEffect(()=>{
     if (!loadOnce){
@@ -38,16 +47,7 @@ const CardList = ({tagsMeta}) => {
   useEffect(()=>{
     // console.log("here2");
     setPosts(filteredBlogs.slice(0, end));
-  }, [end])
-
-  const increaseFilteredEnd = () => {
-    if (end+n > filteredBlogs.length){
-      setEnd(filteredBlogs.length);
-      setHasMore(false)
-    }else{
-      setEnd(prevEnd=>(prevEnd+=n));
-    }
-  }
+  }, [end, filteredBlogs])
 
   const loadMorePosts = () => {
     setTimeout(() => {

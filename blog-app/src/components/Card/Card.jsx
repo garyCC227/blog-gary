@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
 import { useHistory } from "react-router-dom";
 
 import styles from "./Card.module.css";
@@ -12,12 +12,12 @@ const Card = ({ blog, tagsMeta }) => {
 
 
   const showCardTags = blog['tag'].map((label) => {
-      return (<a
+      return (<div
         key={tagsMeta[label].id}
         className={`${tagsMeta[label].className} ${styles["my-label"]}`}
       >
         {label}
-      </a>)
+      </div>)
   })
   
 /*   useEffect(()=>{

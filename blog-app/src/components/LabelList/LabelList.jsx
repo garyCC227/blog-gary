@@ -44,7 +44,7 @@ const LabelList = ({ tagsMeta }) => {
 
     //sort blog by date
     newFilteredBlog.sort(sortByDateString);
-    console.log(newFilteredBlog);
+    // console.log(newFilteredBlog);
     setBlogCount(newFilteredBlog.length);
     setFilteredBlogs(newFilteredBlog);
 

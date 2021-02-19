@@ -30,6 +30,11 @@ transform: rotate(-1deg);
   border-radius: 10px !important;
 }
 
+.my-label:hover{
+  cursor: pointer;
+  opacity: 1.5;
+}
+
 .my-header{
   font-weight: 700;
   font-size: 15pt;

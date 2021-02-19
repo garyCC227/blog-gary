@@ -4,7 +4,7 @@ import styles from "./works.module.css";
 import WorkCard from "../../components/WorkCard";
 import data from "../../posts.json";
 
-const Works = ({}) => {
+const Works = () => {
   const [works, setWorks] = useState(data.works);
   const [currCategory, setCurrCategory] = useState("All");
   const [numWorksShow, setNumWorksShow] = useState(3);
@@ -17,7 +17,7 @@ const Works = ({}) => {
     }else{
       setHasMore(true);
     }
-  }, [numWorksShow])
+  }, [numWorksShow, works])
 
   useEffect(()=>{
     setNumWorksShow(3);
@@ -38,7 +38,7 @@ const Works = ({}) => {
 
   //function to filter work with category
   const cateFilter = (cate) =>{
-    if (cate == 'All'){
+    if (cate === 'All'){
       setWorks(data.works)
     }else{
       let newWorks = filterWorks(data.works, cate)
@@ -51,23 +51,23 @@ const Works = ({}) => {
     return (
       <div className="ui tabular menu">
         {categories.map(cate => {
-          if (cate == currCategory) {
+          if (cate === currCategory) {
             return (
-              <a
+              <div
                 className={`item blue active ${styles["link"]}`}
                 onClick={() => cateOnClick(cate)}
               >
                 {cate}
-              </a>
+              </div>
             );
           }
           return (
-            <a
+            <div
               className={`item ${styles["link"]}`}
               onClick={() => cateOnClick(cate)}
             >
               {cate}
-            </a>
+            </div>
           );
         })}
       </div>

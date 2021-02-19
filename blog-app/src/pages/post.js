@@ -10,8 +10,6 @@ import { DiscussionEmbed } from "disqus-react";
 
 import "./post.css";
 import posts from "../posts.json";
-// import CommentBox from '../components/Comment';
-// import app from '../utils/firebaseConfig.js';
 
 const override = css`
   display: block;
@@ -22,13 +20,12 @@ const override = css`
 const Post = (props) => {
   const [post, setPost] = useState(null);
   const location = useLocation();
-  // const [postExists, setPostExists] = useState(false);
   const disqusShortname = "garyblog-227";
-  const [disqusConfig, setConfig] = useState({
+  const disqusConfig ={
     url: `http://localhost:3000/${location.pathname}`,
     identifier: `${location.pathname}/comments`,
     title: 'comments'
-  })
+  }
 
   useEffect(() => {
     const validId = parseInt(props.match.params.id);
@@ -45,7 +42,7 @@ const Post = (props) => {
         })
     };
 
-  }, [])
+  }, [props.match.params.id])
 
   useEffect(() => {
     if (post !== null) {
@@ -94,7 +91,6 @@ const Post = (props) => {
 
 
             <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-            /* <CommentBox  blogId={validId} db={post.AllComments} rootCommentsIds={post.rootCommentIDs} /> */
 
           }
         </div>)
