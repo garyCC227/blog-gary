@@ -11,20 +11,20 @@ import json
 
 ##configure the blog meta-data
 # read the md content into oneline string
-file = r"../content/binaryTree1.md" #TODO: 1. Modify file name
-with open(file,'r', encoding='utf-8') as f:
-    output = f.read()
-    content = rf'{output}'
+# file = r"../content/binaryTree1.md" #TODO: 1. Modify file name
+# with open(file,'r', encoding='utf-8') as f:
+#     output = f.read()
+#     content = rf'{output}'
 
 #Blog meta data. TODO: 2. modify this everytime
-new_id = 68716579425
+new_id = "68716579999"
 new_blog = {
-  "id":new_id, #int
-  "title":"BinaryTree Coding 1", #string
+  "id":int(new_id), #int
+  "title":"Faster R-CNN", #string
   "author":"Linchen Chen", #string
-  "date":"Feb 16 2021", #string
-  "tag":["clean code"],  #array
-  "content":content #string
+  "date":"Feb 20 2021", #string
+  "tag":["Coding"],  #array
+  "file":"fasterRCNN.md" #File
 }
 
 # print(content, end="")
