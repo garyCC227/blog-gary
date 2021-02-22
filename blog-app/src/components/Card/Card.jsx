@@ -1,10 +1,24 @@
 import React from "react";
+import { useEffect } from "react";
+import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 import styles from "./Card.module.css";
 
 const Card = ({ blog, tagsMeta }) => {
   let history = useHistory();
+  const [desc, setDesc] = useState(null);
+
+  useEffect(()=>{
+    let file = blog['file'];
+    const path = require(`../../content/${file}`);
+    fetch(path)
+      .then(res => res.text())
+      .then(content => {
+        setDesc(content);
+      })
+  }, [])
+
 
   const redirect = (id) => {
     history.push(`/post/${id}`);
@@ -19,27 +33,6 @@ const Card = ({ blog, tagsMeta }) => {
         {label}
       </div>)
   })
-  
-/*   useEffect(()=>{
-    //app.database().ref('comments')
-    //.get()
-    //.then(res=>setComments(res.val()['Comments']))
-    
-    // let ref= app.database().ref('comments/Comments')
-    // ref.child("ID4")  
-    // .set({
-    //     "author":"tester2",
-    //     "date":new Date().toISOString(),
-    //     "content":"Comment2      dasdsadasdasdsas",
-    //     "child":[3]
-    // })
-    console.log("check")
-    app.database().ref('blogs')
-    .get()
-    .then(res=>console.log(res.val()))
-    
-
-  }, []) */
 
 
   return (
@@ -55,8 +48,7 @@ const Card = ({ blog, tagsMeta }) => {
 
         <div className={styles["my-desc"]}>
           <p>
-            {blog.content}
-            {console.log("check")}
+            {desc}
           </p>
         </div>
 
