@@ -18,3 +18,62 @@ class Solution:
         
         return node
 ```
+
+
+## Swap nodes in pairs(24)
+```Python
+
+class Solution:
+    def swapPairs(self, head: ListNode) -> ListNode:
+        if not head:
+            return None
+        
+        if not head.next:
+            return head
+            
+        head.val, head.next.val = head.next.val, head.val
+        
+        head.next.next = self.swapPairs(head.next.next)
+        return head
+```
+
+
+## Reverse Linked List(206)
+ - 32ms > 85%
+```Python
+class Solution:
+    def reverseList(self, node: ListNode) -> ListNode:
+        if not node:
+            return None
+        curr = node
+        prev = None
+        while True:
+            next_ = curr.next
+            curr.next = prev
+            
+            prev = curr
+            curr = next_
+            
+            if not curr:
+                break
+            
+        return prev
+```
+
+
+## Linked List cycle(141)
+- 48 ms, faster than 92.36%
+```Python
+
+class Solution:
+    def hasCycle(self, head: ListNode) -> bool:
+        fast = slow = head
+        
+        while (fast is not None) and (fast.next is not None):
+            fast, slow = fast.next.next, slow.next
+            
+            if fast == slow:
+                return True
+            
+        return False
+```
